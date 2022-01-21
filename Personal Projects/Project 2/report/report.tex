@@ -1,0 +1,200 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{listings}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\oddsidemargin 0mm
+\evensidemargin 0mm
+\textwidth 160mm
+\textheight 200mm
+
+\pagestyle {plain}
+\pagenumbering{arabic}
+
+\newcounter{stepnum}
+
+\title{Assignment 2 Solution}
+\author{Rithvik Bhogadi and bhogadic}
+\date{\today}
+
+\begin {document}
+
+\maketitle
+
+This report discusses the testing phase for .... It also discusses the results
+of running the same tests on the partner files. The assignment specifications
+are then critiqued and the requested discussion questions are answered.
+
+\section{Testing of the Original Program}
+
+When testing the original program, the files $CircleT.py$, $TriangleT.py$, $BodyT.py$, $Scene.py$ were tested. The result of the testing is that 19 of the
+test cases had passed which means that the original had no errors and all of the methods from the program have passed all the test cases. There were no
+failed test cases. The rational of the cases for the $CircleT.py$ was to check if the method`s output would match the output typed into the test cases.
+The testing consists of testing the exception handling ability of the python file. The rational of the test cases for the $TriangleT.py$ follow the 
+same rational as the $CircleT.py$ class and checks its ability to handles exceptions as well. The rational for the $BodyT.py$ file checks for what kind of
+shape that the object is made up of as well as throwing an expception if all objects are not of the same length. The rational for testing the $Scene.py$ is
+checking if the shape, unbalanced forces and the initial velocity match the desired output.
+
+\section{Results of Testing Partner's Code}
+
+The results of testing partner file`s combined with the original file`s have been positive. The result of this testing exercise is that 19 of the test cases
+had passed which means that the original had no errors and all of the methods from the program have passed all the test cases. The partner file`s
+$CircleT.py$, $TriangleT.py$, $BodyT.py$, $Scene.py$ were tested. There are no problems with the original file`s or the partner file`s because both file`s
+have no issue during compliation and are able to pass all of the test cases. This exercise teaches an important concept which is regarding following the
+specifications listed by the MIS. This is because in doing so it allows for the program file`s to be built in the best possible way. It is always helpful
+to have a guide and follow specified instructions as it only only allows for the quality of the program to be better. When comparing the results of this
+exercise between A1 and A2, there have been a couple of differences. In A1, in order to test the partner file`s, instead of using $pytest$, the testing
+was done manually. This meant that each test case would have a desired output and each individual function would be tested. The problem with manual testing
+is that it takes longer than expected. In A2, in order to the partner file`s we used $pytest$. The benefit of using $pytest$ is that it less time consuming
+and as long as each test case method is pre-written and functionally working, the $pytest$ will be of great help as it makes sure to test every test case
+method implemented at once.
+
+\section{Critique of Given Design Specification}
+
+The design specification of this assignment has been very clear and direct. This is because unlike the last assignment, this assignment had not allowed me
+to make multiple assumptions. Each step was clear and easy to understand. The specification for each module had stated the kind of methods that need to be
+implemented and even stated the type of exceptions that was required to be thrown in the case of an error. This assignment was informative as it had allowed
+me to learn about implementing and connecting different modules together while creating getters and setter in order to fund initialy velocites and unbalanced
+forces. By doing this assignment I have learnt on how to create graphs using $matplotlib$ and as a result was able to accomplish one of the main tasks of 
+this assignment. This assignment is beneficial for a student because it allows for the student to gian experience on how to implement functions that use
+mathematical notation to accomplish its functionality. A way in which the design specifications of this assignment may be improved is by trying to simplify
+the mathematical expressions in simpler expressions. Some of the mathematical expressions listed in the module specifications might not be easy to understand
+for students who may have never seen those expressiosn before. For example, the mathematical expressions within functions such as $sim()$, $mmom()$ and 
+$cm()$ are examples of expressions that may be easy to comprehend. Another criticism of the design specifications is regarding $Plot.py$. This is because
+although there is no required test cases for $Plot.py$, in order to check on whether the correct graphs are created the specification does not specify on
+how to do so. The specification has to explain better about how to check and see if the correct graph is produced by stating that the $make_expt.py$ file
+may be used. Finally, the inclusion of $SciPy$ module only leads to confusion for the students because some students may intepret as of they would be 
+required to implement another module even though it is not required.
+
+\section{Answers}
+
+\begin{enumerate}[a)]
+
+\item No, it is not necessary to create a unit test for getters and setters. This is because the objective of unit testing to identify the real behaviour
+of the function. Getters and setters do not have an actual behaviour because they only set and get. Unless a getter or setter is does more than just set or
+get objects and actually consists of complex code, it is a waste of time to do unit testing for getters and setters.
+
+\item In order to test the getters and setters of these state variables by testing the $sim()$ function within the $Scene.py$. This is because by testing the
+function, the function will use the state variable to achieve its functionality. In this scenario when testing, if the output from testing the function meets
+the desired output, then it means that the getters and setters have been able to get the value and set the value required.
+
+\item In order to test $Plot.py$ if required, export the graphs into images and then by comparing the images a conclusion can be made upon $Plot.py$. This
+can be done by importing $matplotlib$ and then using $savefig()$ in order to save the graphs as images. This will alow for the tester to compare and spot
+any issues within the images.
+
+\item
+\begin {lstlisting}
+close_enough: seq of \mathbb{R}  \rightarrow \beta 
+close_enough(x_{calc}, x_{true}) = ([+i : \mathbb{N} \mid 0..$nsteps$ - 1] : \frac{\parallel x_{calc} - x_{true}\parallel}{\parallel x_{true}\parallel} <
+\epsilon 
+\end{lstlisting}
+
+\item There does not have to be exception for negative coordinates because coordinates are relative to the origin. This means that negative coordinates are
+allowed. The sum of both numbers has to be positive and not equal to 0.
+
+\item The state invariant is always satisified by the given specification because the specification is creating methods for a triangle. This means that a
+triangle must always have all of its sides have lengths greater than 0 and therefore, the state invariant will always be satisfied.
+
+\item 
+\begin {lstlisting}
+s = [math.sqrt(x) for i in range(5,20)
+if i % 2 == 0]
+\end{lstlisting}
+
+\item
+\begin {lstlisting}
+  result = []
+for ch in s:
+    if not ch.isupper(): result.append(ch)
+s = ''.join(result)
+\end{lstlisting}
+
+\item Abstraction is the process of removing object and hence creating a superset but instead, generality is the process of creating general concepts by
+abstracting properties. For example, if abstraction was piece of an object, then generality embodies the whole object with the inclusion of ther objects.
+This means that generality encapsulates abstraction as well. Overall, they are related because abstractions acts as a subset of generality.
+
+\item The second scenario is better because we need low coupling in this case. This is because the second scenario allows for the user to create multiple
+sub modules before implementing a main module.
+
+\end{enumerate}
+
+\newpage
+
+\lstset{language=Python, basicstyle=\tiny, breaklines=true, showspaces=false,
+  showstringspaces=false, breakatwhitespace=true}
+%\lstset{language=C,linewidth=.94\textwidth,xleftmargin=1.1cm}
+
+\def\thesection{\Alph{section}}
+
+\section{Code for Shape.py}
+
+\noindent \lstinputlisting{../src/Shape.py}
+
+\newpage
+
+\section{Code for CircleT.py}
+
+\noindent \lstinputlisting{../src/CircleT.py}
+
+\newpage
+
+\section{Code for TriangleT.py}
+
+\noindent \lstinputlisting{../src/TriangleT.py}
+
+\newpage
+
+\section{Code for BodyT.py}
+
+\noindent \lstinputlisting{../src/BodyT.py}
+
+\newpage
+
+\section{Code for Scene.py}
+
+\noindent \lstinputlisting{../src/Scene.py}
+
+\newpage
+
+\section{Code for Plot.py}
+
+\noindent \lstinputlisting{../src/Plot.py}
+
+\newpage
+
+\section{Code for test\_driver.py}
+
+\noindent \lstinputlisting{../src/test_driver.py}
+
+\newpage
+
+\section{Code for Partner's CircleT.py}
+
+\noindent \lstinputlisting{../partner/CircleT.py}
+
+\newpage
+
+\section{Code for Partner's TriangleT.py}
+
+\noindent \lstinputlisting{../partner/TriangleT.py}
+
+\newpage
+
+\section{Code for Partner's BodyT.py}
+
+\noindent \lstinputlisting{../partner/BodyT.py}
+
+\newpage
+
+\section{Code for Partner's Scene.py}
+
+\noindent \lstinputlisting{../partner/Scene.py}
+
+\newpage
+
+\end {document}
