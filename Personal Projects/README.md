@@ -1,1 +1,1 @@
-# Private Student Repo (bhogadic)
+# Public Repo
