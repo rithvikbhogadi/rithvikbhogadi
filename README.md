@@ -1,7 +1,5 @@
-- 👋 Hi, I’m @rithvikbhogadi
-- 👀 I’m interested in becoming a software developer
-- 🌱 I’m currently learning about software development
-- 💞️ I’m looking to collaborate on projects with software developers and software testers
+- 👋 Hi, I’m @rithvikbhogadi, this is my personal GitHub repository where you can see all of the personal projects that I have worked on.
+
 
 <!---
 rithvikbhogadi/rithvikbhogadi is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
